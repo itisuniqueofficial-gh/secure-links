@@ -19,6 +19,28 @@ const mgInput = document.getElementById('mg');
 const gdInput = document.getElementById('gd');
 const tgInput = document.getElementById('tg');
 
+function normalizeMega(value) {
+    return value.replace(/^https?:\/\/mega\.nz\/file\//i, '').trim();
+}
+
+function normalizeDrive(value) {
+    const trimmed = value.trim();
+    const match = trimmed.match(/[-\w]{25,}/);
+    return match ? match[0] : trimmed;
+}
+
+function normalizeTelegram(value) {
+    return value.trim().replace(/^\?/, '');
+}
+
+function setFieldError(message) {
+    output.value = message;
+    openBtn.removeAttribute('href');
+    outputSection.style.display = 'block';
+    output.focus();
+    output.select();
+}
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -26,9 +48,18 @@ form.addEventListener('submit', function (e) {
     const name = encodeBase64(nameInput.value.trim());
     const size = encodeBase64(sizeInput.value.trim());
     const desc = encodeBase64(descInput.value.trim());
-    const mg = encodeBase64(mgInput.value.trim());
-    const gd = encodeBase64(gdInput.value.trim());
-    const tg = encodeBase64(tgInput.value.trim());
+    const mgValue = normalizeMega(mgInput.value);
+    const gdValue = normalizeDrive(gdInput.value);
+    const tgValue = normalizeTelegram(tgInput.value);
+
+    if (gdInput.value.trim() && !/^[A-Za-z0-9_-]{10,}$/.test(gdValue)) {
+        setFieldError('Enter a valid Google Drive file link or ID.');
+        return;
+    }
+
+    const mg = encodeBase64(mgValue);
+    const gd = encodeBase64(gdValue);
+    const tg = encodeBase64(tgValue);
 
     const url = `${baseUrl}/?name=${name}&size=${size}&desc=${desc}&mg=${mg}&gd=${gd}&tg=${tg}`;
 

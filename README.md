@@ -75,5 +75,29 @@ If this is a project site, the full URL will include your repository name becaus
 - The JavaScript `fetch()` calls will keep working as long as those files stay in the site root.
 - If you later rename the repository, update `baseurl` in `_config.yml`.
 - With a custom domain on a user/org Pages site, keep `baseurl: ""`.
-*** Add File: CNAME
-sl.itisuniqueofficial.com
+
+## Local Preview
+
+If you want to preview the site locally with Jekyll:
+
+1. Install Ruby and Bundler.
+2. Install Jekyll: `gem install jekyll bundler`
+3. Run: `jekyll serve`
+4. Open the local server URL shown in the terminal.
+
+## Data Format
+
+The JSON map files use this structure:
+
+```json
+{
+  "file-id": {
+    "name": "Example File",
+    "size": "1.2 GB",
+    "desc": "Short description",
+    "mg": "mega-file-id",
+    "gd": "google-drive-file-id",
+    "tg": "telegram-start-value"
+  }
+}
+```
