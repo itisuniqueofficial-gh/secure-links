@@ -18,6 +18,7 @@ const descInput = document.getElementById('desc');
 const mgInput = document.getElementById('mg');
 const gdInput = document.getElementById('gd');
 const tgInput = document.getElementById('tg');
+const siteRoot = (form.dataset.siteRoot || '/').replace(/\/$/, '');
 
 function normalizeMega(value) {
     return value.replace(/^https?:\/\/mega\.nz\/file\//i, '').trim();
@@ -44,7 +45,7 @@ function setFieldError(message) {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const baseUrl = window.location.origin + '{{ "/" | relative_url }}'.replace(/\/$/, '');
+    const baseUrl = window.location.origin + siteRoot;
     const name = encodeBase64(nameInput.value.trim());
     const size = encodeBase64(sizeInput.value.trim());
     const desc = encodeBase64(descInput.value.trim());
