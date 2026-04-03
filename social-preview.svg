@@ -1,0 +1,23 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="640" fill="#F8FAFC"/>
+  <rect x="72" y="72" width="1136" height="496" rx="32" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="128" y="156" width="160" height="160" rx="28" fill="#2563EB"/>
+  <path d="M182 203C182 193.611 189.611 186 199 186H246.172C250.679 186 254.999 187.79 258.186 190.978L284.022 216.814C287.21 220.001 289 224.321 289 228.828V269C289 278.389 281.389 286 272 286H199C189.611 286 182 278.389 182 269V203Z" fill="white"/>
+  <path d="M254 186V222C254 225.314 256.686 228 260 228H296" fill="#DBEAFE"/>
+  <path d="M222 242H249" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M235.5 226V258" stroke="#2563EB" stroke-width="10" stroke-linecap="round"/>
+  <path d="M182 370C182 360.611 189.611 353 199 353H272C281.389 353 289 360.611 289 370V417C289 426.389 281.389 434 272 434H199C189.611 434 182 426.389 182 417V370Z" fill="#0F172A"/>
+  <path d="M224 383L235.5 395.5L249 380" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M235.5 395V409" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <path d="M213 409H258" stroke="white" stroke-width="10" stroke-linecap="round"/>
+  <text x="352" y="234" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="84" font-weight="700">Secure Links</text>
+  <text x="352" y="304" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="500">Download page and link generator</text>
+  <text x="352" y="360" fill="#2563EB" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600">It Is Unique Official</text>
+  <rect x="352" y="410" width="360" height="56" rx="14" fill="#EFF6FF"/>
+  <text x="384" y="446" fill="#1D4ED8" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="600">sl.itisuniqueofficial.com</text>
+  <circle cx="1120" cy="156" r="18" fill="#60A5FA" fill-opacity="0.18"/>
+  <circle cx="1168" cy="204" r="10" fill="#2563EB" fill-opacity="0.18"/>
+  <circle cx="1080" cy="228" r="8" fill="#0F172A" fill-opacity="0.12"/>
+  <circle cx="1088" cy="484" r="24" fill="#2563EB" fill-opacity="0.08"/>
+  <circle cx="1164" cy="456" r="14" fill="#0F172A" fill-opacity="0.08"/>
+</svg>
