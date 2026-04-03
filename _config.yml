@@ -2,5 +2,6 @@ title: Secure Links - It Is Unique Official
 description: Generate and decode file information easily with this simple and responsive tool.
 baseurl: ""
 url: "https://sl.itisuniqueofficial.com"
+lang: en
 markdown: kramdown
 plugins: []
