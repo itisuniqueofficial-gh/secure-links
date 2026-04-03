@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.meta_title | default: site.title }}</title>
+<meta name="description" content="{{ page.meta_description | default: site.description }}">
+<meta name="author" content="It Is Unique Official">
+<meta name="theme-color" content="#ffffff">
+<meta name="robots" content="{{ page.meta_robots | default: 'index,follow,max-image-preview:large' }}">
+<link rel="canonical" href="{{ page.meta_canonical | default: page.url | absolute_url }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{{ page.meta_title | default: site.title }}">
+<meta property="og:description" content="{{ page.meta_description | default: site.description }}">
+<meta property="og:url" content="{{ page.meta_canonical | default: page.url | absolute_url }}">
+<meta property="og:site_name" content="Secure Links">
+<meta property="og:image" content="{{ page.meta_image | default: 'https://blogger.googleusercontent.com/img/a/AVvXsEhkHLu3FwOa7E3fPNbZu1XB9KLW4zNMLTsVwCgWAHIjsF6vwQtRTZETmElbHdIItgJyMjWKXecPPpKMPWL2IQuOn8eR8zfpxbwVJFDyrCHR_cp4bSBudinwLxkwJ4B1-fbRG2b1kdkkGJGxXF3fuJsQ0Vb-UBcL5KkbxuTrw3iIP2dj-7nXl5Hu9tm_vieR=s512' }}">
+<meta property="og:image:alt" content="{{ page.meta_image_alt | default: 'Secure Links by It Is Unique Official' }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.meta_title | default: site.title }}">
+<meta name="twitter:description" content="{{ page.meta_description | default: site.description }}">
+<meta name="twitter:image" content="{{ page.meta_image | default: 'https://blogger.googleusercontent.com/img/a/AVvXsEhkHLu3FwOa7E3fPNbZu1XB9KLW4zNMLTsVwCgWAHIjsF6vwQtRTZETmElbHdIItgJyMjWKXecPPpKMPWL2IQuOn8eR8zfpxbwVJFDyrCHR_cp4bSBudinwLxkwJ4B1-fbRG2b1kdkkGJGxXF3fuJsQ0Vb-UBcL5KkbxuTrw3iIP2dj-7nXl5Hu9tm_vieR=s512' }}">
+{% if page.meta_schema == 'website' %}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Secure Links",
+    "url": "{{ page.meta_canonical | default: page.url | absolute_url }}",
+    "description": "{{ page.meta_description | default: site.description }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "It Is Unique Official",
+      "url": "https://www.itisuniqueofficial.com"
+    }
+  }
+</script>
+{% endif %}
