@@ -48,6 +48,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 16px;
+    overflow-wrap: break-word;
 }
 
 main {
@@ -61,7 +62,7 @@ header {
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
     font-weight: 600
 }
 
@@ -86,6 +87,7 @@ label {
 input[type="text"],
 input[readonly] {
     width: 100%;
+    min-height: 44px;
     padding: 10px 12px;
     font-size: 14px;
     border: 1px solid var(--border);
@@ -103,6 +105,10 @@ input[readonly] {
 }
 
 .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     padding: 10px 14px;
     border-radius: var(--radius);
     font-size: 14px;
@@ -129,6 +135,10 @@ footer a:focus-visible {
 #outputSection {
     margin-top: 20px;
     display: none
+}
+
+#output {
+    word-break: break-all;
 }
 
 .output-actions {
@@ -161,6 +171,7 @@ footer a {
     padding-top: 24px;
     border-top: 1px solid var(--border);
     text-align: left;
+    overflow: hidden;
 }
 
 .comments h2 {
@@ -169,13 +180,54 @@ footer a {
     font-weight: 600;
 }
 
+.giscus,
+.giscus-frame {
+    max-width: 100%;
+}
+
 @media(max-width:600px) {
+    body {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
     header h1 {
         font-size: 18px
     }
 
+    header p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    main {
+        max-width: none;
+    }
+
+    .controls,
+    .output-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .btn {
-        flex: 1;
+        width: 100%;
         text-align: center
+    }
+
+    #generated-link-heading {
+        line-height: 1.4;
+    }
+}
+
+@media(max-width:380px) {
+    body {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[readonly],
+    .btn {
+        font-size: 13px;
     }
 }

@@ -1,7 +1,19 @@
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   background: #f9f9f9;
   color: #222;
+  overflow-wrap: break-word;
 }
 
 .skip-link {
@@ -35,15 +47,21 @@ footer {
 }
 
 main {
+  width: min(100%, 700px);
   padding: 20px;
-  max-width: 700px;
   margin: 20px auto;
   text-align: center;
 }
 
 h1 {
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
   margin-bottom: 20px;
   color: #333;
+}
+
+header h2 {
+  margin: 0;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
 
 .file-info p {
@@ -64,11 +82,14 @@ h1 {
 
 .links a {
   display: block;
+  width: 100%;
+  min-height: 48px;
   padding: 12px;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
+  border-radius: 10px;
   transition: background 0.25s;
 }
 
@@ -109,15 +130,66 @@ h1 {
   font-weight: bold;
 }
 
+.note-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.note-link {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.note-link:hover,
+.note-link:focus-visible {
+  text-decoration: underline;
+}
+
 .comments {
   margin-top: 40px;
   padding-top: 24px;
   border-top: 1px solid #ddd;
   text-align: left;
+  overflow: hidden;
 }
 
 .comments h2 {
   margin: 0 0 16px;
   font-size: 20px;
   color: #333;
+}
+
+.giscus,
+.giscus-frame {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  header,
+  footer {
+    padding: 14px 16px;
+  }
+
+  main {
+    padding: 18px 16px 24px;
+    margin: 12px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 16px 12px 22px;
+  }
+
+  .links {
+    max-width: none;
+  }
+
+  .comments {
+    margin-top: 32px;
+    padding-top: 20px;
+  }
 }
