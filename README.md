@@ -1,89 +1,49 @@
-# Secure Links GitHub Pages Setup
+# Secure Links
 
-This project is now ready to run as a GitHub Pages Jekyll site.
+Secure Links is a GitHub Pages site for viewing file details and accessing available download links for It Is Unique Official.
 
-## Files Added for GitHub Pages
+Live site:
+- `https://sl.itisuniqueofficial.com`
 
-- `_config.yml` enables Jekyll configuration
-- `index.html` and `tool.html` now use Jekyll front matter
-- Asset links now use Jekyll path filters so they work on GitHub Pages
+## Features
 
-## Before Deploying
+- File detail pages powered by static JSON maps
+- Download links for supported providers
+- Simple GitHub Pages deployment
+- Responsive static frontend
+- Giscus-powered comments
 
-Update `_config.yml` to match your repository type.
+## Project Structure
 
-For a user or organization site:
+- `index.html` renders file information
+- `tool.html` provides the link generator tool
+- `script.js` and `tool.js` handle frontend logic
+- `map-1.json` and `map-2.json` store file metadata
+- `_includes/` contains shared Jekyll fragments
+- `_config.yml` configures the Pages site
 
-```yml
-baseurl: ""
-url: "https://username.github.io"
-```
+## Local Preview
 
-For a project site:
+To preview locally with Jekyll:
 
-```yml
-baseurl: "/repo-name"
-url: "https://username.github.io"
-```
+1. Install Ruby and Bundler
+2. Install Jekyll: `gem install jekyll bundler`
+3. Run: `jekyll serve`
+4. Open the local URL shown in the terminal
 
-Custom domain example:
+## Deployment
+
+This repository is configured for GitHub Pages with a custom domain:
+- `sl.itisuniqueofficial.com`
+
+Current site settings in `_config.yml`:
 
 ```yml
 baseurl: ""
 url: "https://sl.itisuniqueofficial.com"
 ```
 
-## Deploy on GitHub Pages
-
-1. Create a GitHub repository.
-2. Upload or push all files from this project.
-3. Open the repository on GitHub.
-4. Go to `Settings` > `Pages`.
-5. Under `Build and deployment`, choose `Deploy from a branch`.
-6. Select your branch, usually `main`.
-7. Select the folder `/ (root)`.
-8. Save the settings.
-
-GitHub will build and publish the site automatically.
-
-## Custom Domain
-
-This repository includes a `CNAME` file for:
-
-```txt
-sl.itisuniqueofficial.com
-```
-
-In GitHub:
-
-1. Open `Settings` > `Pages`.
-2. Set the custom domain to `sl.itisuniqueofficial.com`.
-3. Enable HTTPS after DNS is configured.
-
-At your DNS provider, point `sl.itisuniqueofficial.com` to GitHub Pages using the records GitHub shows for your Pages site.
-
-## Site URLs
-
-- Home page: `/`
-- Tool page: `/tool.html`
-
-If this is a project site, the full URL will include your repository name because of `baseurl`.
-
-## Notes
-
-- JSON files like `map-1.json` and `map-2.json` are served as static files by GitHub Pages.
-- The JavaScript `fetch()` calls will keep working as long as those files stay in the site root.
-- If you later rename the repository, update `baseurl` in `_config.yml`.
-- With a custom domain on a user/org Pages site, keep `baseurl: ""`.
-
-## Local Preview
-
-If you want to preview the site locally with Jekyll:
-
-1. Install Ruby and Bundler.
-2. Install Jekyll: `gem install jekyll bundler`
-3. Run: `jekyll serve`
-4. Open the local server URL shown in the terminal.
+If the domain changes, update both `_config.yml` and `CNAME`.
 
 ## Data Format
 
@@ -101,3 +61,13 @@ The JSON map files use this structure:
   }
 }
 ```
+
+## Support
+
+- Website: `https://www.itisuniqueofficial.com`
+- Support: `support@itisuniqueofficial.com`
+- Security: see the organization `SECURITY.md`
+
+## License
+
+This project is licensed under the MIT License.
