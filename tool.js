@@ -64,6 +64,11 @@ form.addEventListener('submit', function (e) {
     const gdValue = normalizeDrive(gdInput.value);
     const tgValue = normalizeTelegram(tgInput.value);
 
+    if (!mgValue && !gdValue && !tgValue) {
+        setFieldError('Add at least one download source: Mega, Google Drive, or Telegram.');
+        return;
+    }
+
     if (gdInput.value.trim() && !/^[A-Za-z0-9_-]{10,}$/.test(gdValue)) {
         setFieldError('Enter a valid Google Drive file link or ID.');
         return;
