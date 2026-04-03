@@ -108,3 +108,16 @@ h1 {
   margin-top: 20px;
   font-weight: bold;
 }
+
+.comments {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+.comments h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: #333;
+}
