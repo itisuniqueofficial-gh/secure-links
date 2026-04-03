@@ -42,6 +42,17 @@ function setFieldError(message) {
     output.select();
 }
 
+function buildGeneratedUrl(baseUrl, params) {
+    const search = new URLSearchParams();
+
+    Object.entries(params).forEach(function ([key, value]) {
+        if (value) search.set(key, value);
+    });
+
+    const query = search.toString();
+    return query ? `${baseUrl}/?${query}` : `${baseUrl}/`;
+}
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -62,7 +73,14 @@ form.addEventListener('submit', function (e) {
     const gd = encodeBase64(gdValue);
     const tg = encodeBase64(tgValue);
 
-    const url = `${baseUrl}/?name=${name}&size=${size}&desc=${desc}&mg=${mg}&gd=${gd}&tg=${tg}`;
+    const url = buildGeneratedUrl(baseUrl, {
+        name: name,
+        size: size,
+        desc: desc,
+        mg: mg,
+        gd: gd,
+        tg: tg
+    });
 
     output.value = url;
     openBtn.href = url;
